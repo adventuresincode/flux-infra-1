@@ -1,0 +1,13 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: hnc-operator
+  namespace: hnc-system
+spec:
+  interval: 1m
+  path: "./hnc"
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: hnc-operator-repo
