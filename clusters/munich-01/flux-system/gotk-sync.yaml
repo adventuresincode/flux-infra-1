@@ -20,7 +20,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./clusters/munich-01
+  path: ./clusters/munich-02
   prune: true
   sourceRef:
     kind: GitRepository
