@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 metadata:  
-name: test-01
+  name: test-01
   namespace: test-system
 resources:
   - namespace.yaml
