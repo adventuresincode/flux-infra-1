@@ -8,5 +8,6 @@ spec:
   interval: 1m
   path: "./hnc-operator"
   prune: true
-  kind: GitRepository
-  name: hnc-operator-repo
+  sourceRef:
+    kind: GitRepository
+    name: hnc-operator-repo
