@@ -6,7 +6,7 @@ metadata:
   namespace: hns-system
 spec:
   interval: 10m0s
-  path: ./deploy
+  path: ./clusters/munich-01
   prune: true
   sourceRef:
     kind: GitRepository
