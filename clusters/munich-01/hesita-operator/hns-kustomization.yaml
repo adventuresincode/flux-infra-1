@@ -6,7 +6,7 @@ metadata:
   namespace: hns-system
 spec:
   interval: 10m0s
-  path: ./hestia-operator
+  path: .
   prune: true
   sourceRef:
     kind: GitRepository
