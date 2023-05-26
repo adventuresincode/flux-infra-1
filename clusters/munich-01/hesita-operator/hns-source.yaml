@@ -17,7 +17,7 @@ metadata:
   namespace: hns-system
 spec:
   interval: 10m0s
-  path: ./clusters/munich-01/hestia-operator
+  path: ./deploy
   prune: true
   sourceRef:
     kind: GitRepository
