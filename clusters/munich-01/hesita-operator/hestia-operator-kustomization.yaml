@@ -4,7 +4,6 @@ metadata:
   name: test-01
   namespace: test-system
 resources:
-  - namespace.yaml
   - hns-namespace.yaml
   - hns-source.yaml
   
