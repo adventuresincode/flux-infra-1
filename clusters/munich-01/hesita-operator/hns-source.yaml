@@ -17,7 +17,7 @@ metadata:
   namespace: hns-system
 spec:
   interval: 10m0s
-  path: ./deploy
+  path: .
   prune: true
   sourceRef:
     kind: GitRepository
