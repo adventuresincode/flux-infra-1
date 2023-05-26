@@ -7,8 +7,8 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: v1.1
-  url: https://github.com/kubernetes-sigs/hierarchical-namespaces  
+    branch: v1.0
+  url: https://github.com/adventuresincode/flux-infra-1  
   
 
 
