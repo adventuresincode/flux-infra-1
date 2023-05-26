@@ -1,8 +1,8 @@
 ---
 apiVersion: v1
-kind: gatekeeper-system
+kind: Namespace
 metadata:
-  name: hns-system 
+  name: gatekeeper-system 
   labels:
     istio-injection: enabled
 ---
