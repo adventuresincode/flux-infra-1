@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: hns
+  namespace: hns-system
+spec:
+  interval: 30s
+  ref:
+    branch: v1.0.0
+  url: https://github.com/kubernetes-sigs/hierarchical-namespaces
