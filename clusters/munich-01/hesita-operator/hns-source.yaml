@@ -1,3 +1,17 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: hns
+  namespace: hns-system
+spec:
+  interval: 5m0s
+  path: ./deploy
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: hns
+---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
