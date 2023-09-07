@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: "2023-09-07T03:49:16Z"
+  creationTimestamp: "2023-09-07T03:49:18Z"
   name: test
   namespace: test
 spec:
@@ -11,7 +11,7 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: "2023-09-07T03:49:16Z"
+      creationTimestamp: "2023-09-07T03:49:18Z"
     spec:
       containers:
       - args:
