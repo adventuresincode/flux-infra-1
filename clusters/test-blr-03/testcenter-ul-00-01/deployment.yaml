@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: "2023-09-13T15:53:10Z"
+  name: test
+  namespace: test
+spec:
+  selector:
+    matchLabels:
+      app: test
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: "2023-09-13T15:53:10Z"
+    spec:
+      containers:
+      - args:
+        - test
+        command:
+        - test
+        image: test
+        imagePullPolicy: Always
+        name: test
+        resources:
+          limits:
+            cpu: 100m
+            memory: 128Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+      restartPolicy: Always
+status: {}
