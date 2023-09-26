@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dashboard
-  namespace: default
+  name: opcua-telemetry-dashboard
+  namespace: opcapp
   labels:
     app: dashboard
 spec:
@@ -14,13 +14,13 @@ spec:
       labels:
         app: dashboard
     spec:
-      serviceAccountName: dashboard
+      serviceAccountName: opcua-telemetry-dashboard
       securityContext:
         fsGroup: 472
         supplementalGroups:
           - 0
       containers:
-        - name: dashboard
+        - name: opcua-telemetry-dashboard
           image: "grafana/grafana:latest"
           imagePullPolicy: IfNotPresent
           ports:
@@ -62,4 +62,4 @@ spec:
               - serviceAccountToken:
                   path: workload
                   expirationSeconds: 7200
-                  audience: default
+                  audience: zta-agent

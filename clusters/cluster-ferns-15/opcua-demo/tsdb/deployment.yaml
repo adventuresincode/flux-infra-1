@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tsdb
-  namespace: default
+  name: opcua-historian
+  namespace: opcapp
   labels:
     app: tsdb
 spec:
@@ -14,10 +14,10 @@ spec:
       labels:
         app: tsdb
     spec:
-      serviceAccountName: tsdb
+      serviceAccountName: opcua-historian
       containers:
-        - name: tsdb
-          image: "privsaasv1intacr.azurecr.io/hestia/opctsdb:v1.int"
+        - name: opcua-historian
+          image: "crhestiamp.azurecr.io/tsdb:beta"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5432
@@ -25,7 +25,7 @@ spec:
               protocol: TCP
           env:
             - name: POSTGRES_PASSWORD
-              value: nil
+              value: "TSDB@123!"
           volumeMounts:
             - name: workload-token
               mountPath: /var/run/secrets/tokens
@@ -43,4 +43,4 @@ spec:
               - serviceAccountToken:
                   path: workload
                   expirationSeconds: 7200
-                  audience: zta-token
+                  audience: zta-agent

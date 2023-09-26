@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: opcserver
-  namespace: default
+  name: opcua-server
+  namespace: opcapp
 spec:
   type: ClusterIP
   ports:

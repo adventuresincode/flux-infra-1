@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: broker
-  namespace: default
+  name: opcua-publisher
+  namespace: opcapp
   labels:
     app: broker
 spec:
@@ -14,30 +14,30 @@ spec:
       labels:
         app: broker
     spec:
-      serviceAccountName: broker
+      serviceAccountName: opcua-publisher
       containers:
-        - name: broker
-          image: test
+        - name: opcua-publisher
+          image: "crhestiamp.azurecr.io/opcuabroker:beta"
           imagePullPolicy: IfNotPresent
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
             - name: TIMESCALE_HOST
-              value: test
+              value: "opcua-historian.opcapp.svc:5432"
             - name: TIMESCALE_USER
               value: "postgres"
             - name: TIMESCALE_PWD_ENV
               value: "TIMESCALE_PWD"
             - name: TIMESCALE_PWD
-              value: test
+              value: "Tsdb@123!"
             - name: OPCUA_SERVER_URL
-              value: test
+              value: "opc.tcp://opcua-server.opcapp.svc:50000"
             - name: NAMESPACE_INDEX
               value: "3"
             - name: AUTO_ACCEPT_UNTRUSTED_SERVER_CERT
               value: "True"
             - name: MONITORED_NODE_IDENTIFIERS
-              value: test
+              value: "SpikeData;StepUp;DipData;FastNumberOfUpdates;SlowNumberOfUpdates"
             - name: ENABLE_TIMESERIES_LOGGING
               value: "True"
           volumeMounts:
@@ -57,4 +57,4 @@ spec:
               - serviceAccountToken:
                   path: workload
                   expirationSeconds: 7200
-                  audience: test
+                  audience: zta-agent
