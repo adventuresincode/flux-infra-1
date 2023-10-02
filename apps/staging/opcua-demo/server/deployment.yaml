@@ -17,7 +17,7 @@ spec:
       serviceAccountName: server
       containers:
         - name: server
-          image: crhestiamp.azurecr.io/opcplcserver:beta
+          image: "crhestiamp.azurecr.io/opcplcserver:beta"
           imagePullPolicy: Always
           command:
             [
