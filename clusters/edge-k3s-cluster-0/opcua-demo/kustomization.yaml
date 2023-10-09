@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
 - broker
 - grafana
+- kustomization.yaml
 - server
 - tsdb
