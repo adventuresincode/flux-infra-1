@@ -4,5 +4,6 @@ resources:
 - broker
 - core
 - grafana
+- kustomization.yaml
 - server
 - tsdb
