@@ -5,6 +5,7 @@ resources:
 - broker
 - core
 - grafana
+- kustomization.yaml
 - namespace.yaml
 - server
 - tsdb
