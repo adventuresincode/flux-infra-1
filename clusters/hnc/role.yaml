@@ -17,7 +17,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: flux-applier
-  namespace: dhnc-system
+  namespace: hnc-system
 roleRef:
   kind: Role 
   name: flux-applier
