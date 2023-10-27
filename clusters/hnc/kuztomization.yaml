@@ -3,4 +3,5 @@ kind: Kustomization
 metadata:
   name: hnc-operator
 resources:
-- hns-kustomization.yaml
+- role.yaml
+- hnc-kustomization.yaml
